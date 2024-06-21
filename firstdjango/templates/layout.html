@@ -1,0 +1,30 @@
+{% comment %} {% load static %} {% endcomment %}
+{% load static tailwind_tags %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        {% block title %}
+        Default value
+        {% endblock %}
+    </title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    {% tailwind_css %}
+</head>
+<body> 
+    <nav class=" flex h-26 w-full p-8 justify-between items-center  ">
+        <div  >
+            <a href="/">Home</a>
+            <a href="about">About</a>
+            <a href="contact">Contact</a>
+        </div>
+        <h1 class="text-4xl flex">Chai.com</h1>
+
+    </nav>
+    {% block content %}{% endblock %}
+
+    
+</body>
+</html>
